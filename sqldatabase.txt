@@ -1,0 +1,57 @@
+------
+CREATE TABLE editors(
+id SERIAL PRIMARY KEY,
+name VARCHAR(100),
+username VARCHAR(100),
+email VARCHAR(100),
+image VARCHAR(100),
+admin BOOLEAN
+);
+
+CREATE TABLE users(
+id SERIAL PRIMARY KEY,
+name VARCHAR(100),
+username VARCHAR(100),
+email VARCHAR(100),
+address VARCHAR(100),
+phone VARCHAR(100),
+image VARCHAR(100),
+lead BOOLEAN,
+team_id integer References teams
+);
+
+CREATE TABLE shoots(
+id SERIAL PRIMARY KEY,
+date DATE,
+address VARCHAR(100),
+tags VARCHAR(256),
+views VARCHAR(100),
+agent_id integer References users,
+editor_id integer References editors
+);
+
+CREATE TABLE vt(
+id SERIAL PRIMARY KEY,
+images VARCHAR(100),
+unbrandedvt VARCHAR(100),
+brandedvt VARCHAR(100),
+shoot_id integer References shoots
+);
+
+CREATE TABLE teams(
+id SERIAL PRIMARY KEY,
+name VARCHAR(100),
+address VARCHAR(100),
+phone VARCHAR(100),
+email VARCHAR(100),
+image VARCHAR(100),
+broker_id integer NOT NULL References brokers
+);
+
+CREATE TABLE brokers(
+id SERIAL PRIMARY KEY,
+name VARCHAR(100),
+address VARCHAR(100),
+image VARCHAR(100)
+);
+------
