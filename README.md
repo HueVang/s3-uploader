@@ -1,13 +1,13 @@
-#S3 Uploader
+# S3 Uploader
 
-##Author
+## Author
 
 * *Huey Vang*
 
-###Features
+### Features
 
 * *Upload single files to S3*
 
-###Details
+### Details
 
 An application that allows you to upload images/files to S3.
